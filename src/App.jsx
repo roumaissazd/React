@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -15,7 +17,7 @@ import NoteManager from './Components/NoteManager';
 import TodoList from './Components/TodoList'
 import Event from './Components/Event'
 import Events from './Components/Events'
-
+import MyComponent from './Components/MyComponent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -44,7 +46,9 @@ function App() {
       </p> */}
       <Hello/>
       <h1>Atelier 0</h1>
-      
+      <Routes>
+          <Route path="/hello" element={<Hello />} />
+        </Routes>
       <Form labelle="FirstName : " type="text" namee="FirstName" name="Firstname"/>
       <Form labelle="LastName : "/>
       <div className="App">
@@ -90,7 +94,7 @@ function App() {
       <Events/>
     </div>
      
-  
+  <MyComponent/>
       
     </>
   )
